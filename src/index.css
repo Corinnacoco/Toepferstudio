@@ -1,0 +1,89 @@
+@import 'tailwindcss';
+
+:root {
+  --background: #F2EBE0;
+  --foreground: #2C1A0D;
+  --card: #E5D4BE;
+  --card-foreground: #2C1A0D;
+  --primary: #A85040;
+  --primary-foreground: #F2EBE0;
+  --secondary: #D4B896;
+  --secondary-foreground: #2C1A0D;
+  --muted: #EAD9C5;
+  --muted-foreground: #7A5840;
+  --accent: #8EB1C7;
+  --accent-foreground: #F2EBE0;
+  --border: #C4A07A;
+  --ring: #A85040;
+  --radius: 2px;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+  --radius-sm: var(--radius);
+  --font-display: 'Kalam', 'Fraunces', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+* {
+  scrollbar-width: none;
+}
+
+h1 {
+  font-family: 'Aboreto', Georgia, serif;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+  font-weight: 700;
+}
+
+h2, h3, h4 {
+  font-family: 'Fraunces', Georgia, serif;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  font-weight: 400;
+  font-variation-settings: "opsz" 36, "SOFT" 100, "WONK" 1;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
