@@ -1,8 +1,14 @@
 import { useParams, Link } from "react-router-dom";
-import { posts } from "../data/blog";
+import { usePosts } from "../data/blog";
 
 export default function BlogPost() {
   const { slug } = useParams<{ slug: string }>();
+  const posts = usePosts();
+
+  if (posts === null) {
+    return <div style={{ padding: "8rem 2rem", minHeight: "60vh", backgroundColor: "var(--background)" }} />;
+  }
+
   const post = posts.find(p => p.slug === slug);
 
   if (!post) {

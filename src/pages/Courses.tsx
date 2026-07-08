@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { courses, categories } from "../data/courses";
+import { useCourses, categories } from "../data/courses";
 
 export default function Courses() {
   const [activeCategory, setActiveCategory] = useState("Alle");
+  const courses = useCourses() ?? [];
 
   const filtered = activeCategory === "Alle"
     ? courses

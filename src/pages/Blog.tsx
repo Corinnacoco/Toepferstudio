@@ -1,8 +1,19 @@
 import { Link } from "react-router-dom";
-import { posts } from "../data/blog";
+import { usePosts } from "../data/blog";
 
 export default function Blog() {
+  const posts = usePosts() ?? [];
   const [featured, ...rest] = posts;
+
+  if (!featured) {
+    return (
+      <div style={{ padding: "8rem 2rem", textAlign: "center", backgroundColor: "var(--background)", minHeight: "60vh" }}>
+        <p style={{ fontFamily: "Fraunces, Georgia, serif", fontSize: "1.5rem", color: "var(--muted-foreground)" }}>
+          Noch keine Beiträge vorhanden.
+        </p>
+      </div>
+    );
+  }
 
   return (
     <div style={{ backgroundColor: "var(--background)" }}>
