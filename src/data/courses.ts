@@ -32,4 +32,4 @@ export function useCourses(): Course[] | null {
   return useSanityQuery<Course[]>(COURSES_QUERY);
 }
 
-export const categories = ["Alle", "Drehen", "Handaufbau", "Glasur", "Intensiv", "Kinder"];
+export const categories = ["Alle", "Drehen", "Handaufbau"];

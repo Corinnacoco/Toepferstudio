@@ -21,7 +21,7 @@ export default function Courses() {
       >
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <p style={{ fontSize: "0.75rem", fontWeight: 500, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--muted-foreground)", marginBottom: "1rem" }}>
-            Studio-Kurse
+            Termine
           </p>
           <h1
             style={{
@@ -34,8 +34,9 @@ export default function Courses() {
             Kurse & Workshops
           </h1>
           <p style={{ fontSize: "1.0625rem", color: "var(--muted-foreground)", maxWidth: 560, lineHeight: 1.75 }}>
-            Kleine Gruppen, echte Materialien, echte Zeit. Anmeldung per E-Mail —
-            ich antworte innerhalb von 24 Stunden.
+            In kleinen Gruppen teile ich mein Wissen über Ton und Techniken mit euch.
+            Im Wechsel biete ich Drehkurse und Handaufbaukurse an, für Anfängerinnen und
+            Anfänger ebenso wie für Fortgeschrittene. Ich freue mich auf euch!
           </p>
         </div>
       </section>
@@ -50,12 +51,12 @@ export default function Courses() {
       >
         <div style={{ maxWidth: 1200, margin: "0 auto", display: "flex", alignItems: "center", gap: "1rem", flexWrap: "wrap" }}>
           <span style={{ fontSize: "0.875rem", color: "var(--foreground)" }}>
-            📩 <strong>Anmeldung</strong> — einfach per Mail an{" "}
+            📩 <strong>Anmeldung</strong>: einfach per Mail an{" "}
             <a
-              href="mailto:hallo@ton-und-stille.de"
+              href="mailto:julia.billmaier@web.de"
               style={{ color: "var(--primary)", fontWeight: 500 }}
             >
-              hallo@ton-und-stille.de
+              julia.billmaier@web.de
             </a>
             {" "}mit dem gewünschten Kurs
           </span>
@@ -193,7 +194,7 @@ export default function Courses() {
                 </div>
 
                 <a
-                  href={`mailto:hallo@ton-und-stille.de?subject=Anmeldung: ${encodeURIComponent(course.title)}&body=Hallo,%0A%0Aich möchte mich gerne für den Kurs "${encodeURIComponent(course.title)}" am ${encodeURIComponent(course.date)} anmelden.%0A%0AMein Name: %0A%0AVielen Dank!`}
+                  href={`mailto:julia.billmaier@web.de?subject=Anmeldung: ${encodeURIComponent(course.title)}&body=Hallo,%0A%0Aich möchte mich gerne für den Kurs "${encodeURIComponent(course.title)}" am ${encodeURIComponent(course.date)} anmelden.%0A%0AMein Name: %0A%0AVielen Dank!`}
                   style={{
                     display: "block",
                     textAlign: "center",
