@@ -28,11 +28,11 @@ export default function Footer() {
               marginBottom: "0.75rem",
             }}
           >
-            Lorem & Ipsum
+            Juls Pottery
           </p>
           <p style={{ fontSize: "0.875rem", color: "var(--muted-foreground)", lineHeight: 1.7 }}>
-            Lorem ipsum dolor sit amet.<br />
-            Consectetur adipiscing elit.
+            Kunst & Handwerk.<br />
+            Atelier in Landau.
           </p>
         </div>
 
@@ -66,13 +66,13 @@ export default function Footer() {
             Kontakt
           </p>
           <a
-            href="mailto:hallo@beispiel.de"
+            href="mailto:julia.billmaier@web.de"
             style={{ fontSize: "0.875rem", color: "var(--primary)", display: "block", marginBottom: "0.5rem" }}
           >
-            hallo@beispiel.de
+            julia.billmaier@web.de
           </a>
           <p style={{ fontSize: "0.875rem", color: "var(--muted-foreground)" }}>
-            Lorem ipsum dolor sit amet
+            Atelier in Landau
           </p>
         </div>
       </div>
@@ -91,10 +91,10 @@ export default function Footer() {
         }}
       >
         <p style={{ fontSize: "0.75rem", color: "var(--muted-foreground)" }}>
-          © {new Date().getFullYear()} Lorem & Ipsum
+          © {new Date().getFullYear()} Juls Pottery
         </p>
         <p style={{ fontSize: "0.75rem", color: "var(--muted-foreground)" }}>
-          Lorem ipsum dolor sit amet
+          Kunst & Handwerk
         </p>
       </div>
     </footer>

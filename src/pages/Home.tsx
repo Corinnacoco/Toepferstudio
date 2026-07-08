@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import { useCourses } from "../data/courses";
+import { useMarkets } from "../data/markets";
 
 export default function Home() {
   const courses = useCourses() ?? [];
   const featured = courses.slice(0, 3);
+  const upcomingMarkets = (useMarkets() ?? []).filter(m => !m.past).slice(0, 3);
 
   return (
     <div>
@@ -30,7 +32,7 @@ export default function Home() {
           className="hero-text"
         >
           <p style={{ fontSize: "0.75rem", fontWeight: 500, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--muted-foreground)", marginBottom: "1.5rem" }}>
-            Lorem Ipsum · Dolor Sit Amet
+            Kunst & Handwerk · Landau
           </p>
           <h1
             style={{
@@ -43,12 +45,12 @@ export default function Home() {
               letterSpacing: "0.02em",
             }}
           >
-            Lorem ipsum<br />
-            dolor sit<br />
-            amet.
+            Aus Ton<br />
+            entsteht<br />
+            Alltag.
           </h1>
           <p style={{ fontSize: "1.0625rem", lineHeight: 1.75, color: "var(--muted-foreground)", maxWidth: 380, marginBottom: "2.5rem" }}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore.
+            Wie schön, dass du meine Website gefunden hast! Hier findest du Aktuelles zu Kursen, Workshops und Märkten. Außerdem teile ich in Blog-Beiträgen Inspirationsquellen und Gedanken.
           </p>
           <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
             <Link
@@ -103,19 +105,6 @@ export default function Home() {
       </section>
 
       {/* Intro strip */}
-      <section
-        style={{
-          backgroundColor: "#EED2C9",
-          borderBottom: "1px solid #D4A99A",
-          padding: "1.5rem 2rem",
-        }}
-      >
-        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <p style={{ fontSize: "1.0625rem", fontFamily: "Fraunces, Georgia, serif", fontStyle: "italic", color: "#7A3B27", textAlign: "center" }}>
-            Lorem ipsum dolor · sit amet consectetur · adipiscing elit
-          </p>
-        </div>
-      </section>
 
       {/* Kurse — schlichte Liste */}
       <section style={{ padding: "6rem 2rem", backgroundColor: "var(--background)", borderBottom: "1px solid var(--border)" }}>
@@ -135,7 +124,7 @@ export default function Home() {
                 key={course.id}
                 style={{
                   display: "grid",
-                  gridTemplateColumns: "6rem 1fr auto",
+                  gridTemplateColumns: "8.5rem 1fr auto",
                   alignItems: "center",
                   gap: "2rem",
                   padding: "1.75rem 0",
@@ -197,11 +186,12 @@ export default function Home() {
                 marginBottom: "1.5rem",
               }}
             >
-              Lorem ipsum dolor<br />sit amet consectetur
+              Hallo,<br />ich bin Julia
             </h2>
             <p style={{ fontSize: "1rem", lineHeight: 1.8, color: "rgba(255,255,255,0.8)", maxWidth: 440, marginBottom: "2.5rem" }}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua ut enim veniam.
+              Ich habe eine Leidenschaft für Keramik und mache hauptsächlich Gebrauchskeramik
+              wie Tassen, Teller und Schüsseln. In Landau entsteht gerade ein Gemeinschaftsatelier,
+              mit dem Verkauf meiner Stücke und Töpferkursen. Ich freue mich auf euren Besuch!
             </p>
             <Link
               to="/about"
@@ -248,16 +238,12 @@ export default function Home() {
           </div>
 
           <div style={{ display: "flex", flexDirection: "column", gap: "0" }}>
-            {[
-              { date: "19. Jul", name: "Lorem Ipsum Dolor", city: "Stadt A" },
-              { date: "2. Aug", name: "Consectetur Adipiscing", city: "Stadt B" },
-              { date: "13. Sep", name: "Sed Do Eiusmod Tempor", city: "Stadt C" },
-            ].map((m) => (
+            {upcomingMarkets.map((m) => (
               <div
-                key={m.date}
+                key={m.id}
                 style={{
                   display: "grid",
-                  gridTemplateColumns: "6rem 1fr auto",
+                  gridTemplateColumns: "8.5rem 1fr auto",
                   alignItems: "center",
                   gap: "2rem",
                   padding: "1.75rem 0",
