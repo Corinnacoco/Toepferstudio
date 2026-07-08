@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-import { courses } from "../data/courses";
+import { useCourses } from "../data/courses";
 
 export default function Home() {
+  const courses = useCourses() ?? [];
   const featured = courses.slice(0, 3);
 
   return (
