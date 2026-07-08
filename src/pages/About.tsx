@@ -24,14 +24,14 @@ export default function About() {
             Über mich
           </p>
           <h1 style={{ fontFamily: "Fraunces, Georgia, serif", fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 600, lineHeight: 1.1, marginBottom: "2rem" }}>
-            Lorem ipsum,<br />
-            dolor sit amet.
+            Hallo,<br />
+            ich bin Julia.
           </h1>
           <p style={{ fontSize: "1.0625rem", lineHeight: 1.8, color: "var(--muted-foreground)", marginBottom: "1.25rem" }}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+            Ich habe eine Leidenschaft für Keramik. Bis 2022 machte ich meine Ausbildung an der Berufsfachschule für Keramik in Landshut — dort lernte ich die ganze Vielfalt des Keramikhandwerks kennen: das Drehen an der Töpferscheibe, verschiedene Techniken des Formenbaus, die Herstellung von Gipsformen und unterschiedliche Dekortechniken.
           </p>
           <p style={{ fontSize: "1.0625rem", lineHeight: 1.8, color: "var(--muted-foreground)" }}>
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident.
+            Heute mache ich hauptsächlich Gebrauchskeramik — Tassen, Teller und Schüsseln — und teile mein Wissen in Töpferkursen.
           </p>
         </div>
       </section>
@@ -40,13 +40,13 @@ export default function About() {
       <section style={{ padding: "7rem 2rem", borderBottom: "1px solid var(--border)" }}>
         <div style={{ maxWidth: 800, margin: "0 auto" }}>
           <h2 style={{ fontFamily: "Fraunces, Georgia, serif", fontSize: "clamp(1.5rem, 3vw, 2rem)", fontWeight: 600, marginBottom: "2rem" }}>
-            Lorem ipsum dolor sit
+            Mein Weg zur Keramik
           </h2>
           <div style={{ fontSize: "1.0625rem", lineHeight: 1.85, color: "var(--muted-foreground)", display: "flex", flexDirection: "column", gap: "1.25rem" }}>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-            <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt neque porro quisquam est qui dolorem ipsum.</p>
+            <p>Schon früh hat mich das Töpfern nicht mehr losgelassen. Während meines Freiwilligen Sozialen Jahres in Israel (2016) half ich in einer Werkstatt für Menschen mit Behinderung in der Keramikwerkstatt mit — eine prägende Erfahrung, die entscheidend für meinen Entschluss war, die Ausbildung zur Keramikerin zu machen.</p>
+            <p>Nach der Ausbildung in Landshut zog es mich zurück in meine Heimat Baden-Württemberg. Dort hatte ich zunächst eine kleine Werkstatt im Keller meiner Wohnung in Filderstadt, später konnte ich eine Werkstatt in Stuttgart mitnutzen.</p>
+            <p>Eine Reise in die Türkei 2025 hat mich besonders inspiriert: Dort durfte ich eine Töpferei erleben und an Drehscheiben ganz ohne Strom arbeiten — ein sehr besonderes Erlebnis, das mir gezeigt hat, wie ursprünglich dieses Handwerk sein kann.</p>
+            <p>Nun entsteht ein Gemeinschaftsatelier in Landau — mit dem Verkauf meiner Stücke und Töpferkursen. Ich freue mich sehr über euren Besuch in meinem Atelier und darauf, mein Wissen in einem Kurs mit euch teilen zu dürfen.</p>
           </div>
         </div>
       </section>
@@ -81,14 +81,14 @@ export default function About() {
       <section style={{ padding: "7rem 2rem" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <h2 style={{ fontFamily: "Fraunces, Georgia, serif", fontSize: "clamp(1.5rem, 3vw, 2rem)", fontWeight: 600, marginBottom: "4rem" }}>
-            Lorem ipsum dolor
+            Was mich ausmacht
           </h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "1px", backgroundColor: "var(--border)", border: "1px solid var(--border)" }}>
             {[
-              { title: "Lorem ipsum", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna." },
-              { title: "Dolor sit amet", body: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis." },
-              { title: "Consectetur", body: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint." },
-              { title: "Adipiscing elit", body: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum sed." },
+              { title: "Handwerk", body: "Fundierte Ausbildung an der Berufsfachschule für Keramik in Landshut — vom Drehen an der Scheibe über Formenbau und Gipsformen bis zu Dekortechniken." },
+              { title: "Gebrauchskeramik", body: "Ich mache Keramik für den Alltag: Tassen, Teller und Schüsseln, die benutzt werden wollen — schön und praktisch zugleich." },
+              { title: "Kurse", body: "Mein Wissen teile ich gerne weiter. In meinen Töpferkursen könnt ihr das Handwerk selbst erleben und eure eigenen Stücke gestalten." },
+              { title: "Atelier in Landau", body: "Im entstehenden Gemeinschaftsatelier in Landau findet ihr meine Stücke zum Verkauf — und mich, wenn ihr vorbeischauen möchtet." },
             ].map(({ title, body }) => (
               <div key={title} style={{ backgroundColor: "var(--background)", padding: "2.5rem 2rem" }}>
                 <h3 style={{ fontFamily: "Fraunces, Georgia, serif", fontSize: "1.25rem", fontWeight: 600, marginBottom: "0.875rem" }}>{title}</h3>
