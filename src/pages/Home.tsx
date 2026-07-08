@@ -25,9 +25,9 @@ export default function Home() {
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
-            padding: "5rem 4rem 5rem 2rem",
+            padding: "5rem 3rem",
             maxWidth: 600,
-            marginLeft: "auto",
+            margin: "0 auto",
           }}
           className="hero-text"
         >
