@@ -32,7 +32,7 @@ export default function Home() {
           className="hero-text"
         >
           <p style={{ fontSize: "0.75rem", fontWeight: 500, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--muted-foreground)", marginBottom: "1.5rem" }}>
-            Kunst & Handwerk · Landau
+            Keramik · Kurse · Atelier
           </p>
           <h1
             style={{
