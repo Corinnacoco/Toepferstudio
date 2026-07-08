@@ -98,7 +98,7 @@ export default function Home() {
         <div style={{ overflow: "hidden", backgroundColor: "var(--secondary)" }} className="hero-image">
           <img
             src="/atelier-5.jpg"
-            alt="Atelier mit Holztresen und Keramiklampen"
+            alt="Hände formen Ton an der Töpferscheibe"
             style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center center", filter: "saturate(0.85)" }}
           />
         </div>
@@ -172,7 +172,7 @@ export default function Home() {
           }}
           className="about-home-grid"
         >
-          <div style={{ padding: "6rem 4rem 6rem 2rem", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+          <div style={{ padding: "6rem 4rem 6rem 0", display: "flex", flexDirection: "column", justifyContent: "center" }} className="about-home-text">
             <p style={{ fontSize: "0.75rem", fontWeight: 500, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,0.6)", marginBottom: "1.5rem" }}>
               Über mich
             </p>
@@ -217,8 +217,8 @@ export default function Home() {
           {/* Image panel — bleeds to edge */}
           <div style={{ overflow: "hidden", backgroundColor: "#2d607a" }}>
             <img
-              src="/atelier-5.jpg"
-              alt="Atelier mit Holztresen und Keramiklampen"
+              src="/atelier-3.jpg"
+              alt="Töpferscheibe in einer traditionellen Töpferei"
               style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", filter: "saturate(0.8) brightness(0.75)", mixBlendMode: "multiply" }}
             />
           </div>
@@ -267,6 +267,19 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Keramik-Galerie — volle Breite */}
+      <section style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "4px", backgroundColor: "var(--background)" }} className="keramik-galerie">
+        <div style={{ overflow: "hidden", backgroundColor: "var(--secondary)", aspectRatio: "4/3" }}>
+          <img src="/keramik-schalen-tassen.jpg" alt="Handgemachte Schalen und Tassen" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", filter: "saturate(0.85)" }} />
+        </div>
+        <div style={{ overflow: "hidden", backgroundColor: "var(--secondary)", aspectRatio: "4/3" }}>
+          <img src="/keramik-schuesseln.jpg" alt="Handgemachte Keramikschüsseln" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", filter: "saturate(0.85)" }} />
+        </div>
+        <div style={{ overflow: "hidden", backgroundColor: "var(--secondary)", aspectRatio: "4/3" }}>
+          <img src="/home-2.jpg" alt="Zwei handgemachte Keramiktassen" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", filter: "saturate(0.85)" }} />
+        </div>
+      </section>
+
       <style>{`
         @media (max-width: 900px) {
           .hero-grid { grid-template-columns: 1fr !important; min-height: auto !important; }
@@ -275,6 +288,8 @@ export default function Home() {
           .course-card { grid-template-columns: 1fr !important; margin-left: 0 !important; margin-right: 0 !important; }
           .course-card > div { order: unset !important; min-height: 180px !important; }
           .about-home-grid { grid-template-columns: 1fr !important; }
+          .about-home-text { padding: 4rem 1.5rem !important; }
+          .keramik-galerie { grid-template-columns: 1fr !important; }
           .about-home-grid > div:last-child { min-height: 260px; }
         }
         @media (max-width: 600px) {
