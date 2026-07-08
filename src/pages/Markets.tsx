@@ -14,10 +14,19 @@ export default function Markets() {
             Termine
           </p>
           <h1 style={{ fontFamily: "Fraunces, Georgia, serif", fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 600, marginBottom: "1.25rem" }}>
-            Märkte & Messen
+            Märkte
           </h1>
+          <p style={{ fontSize: "1.0625rem", color: "var(--muted-foreground)", maxWidth: 560, lineHeight: 1.75, marginBottom: "1rem" }}>
+            Ab und zu biete ich meine Keramik auf Märkten an. Ich verkaufe Tassen, Schalen, Teller, Matcha-Sets und noch mehr Gebrauchskeramik.
+          </p>
+          <p style={{ fontSize: "1.0625rem", color: "var(--muted-foreground)", maxWidth: 560, lineHeight: 1.75, marginBottom: "1rem" }}>
+            Falls gerade ein Markt geplant ist, findest du ihn hier in der Übersicht.
+          </p>
           <p style={{ fontSize: "1.0625rem", color: "var(--muted-foreground)", maxWidth: 560, lineHeight: 1.75 }}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Nimmst du selbst an Märkten teil und suchst noch jemanden, um dir einen Stand zu teilen?{" "}
+            <a href="mailto:julia.billmaier@web.de" style={{ color: "var(--primary)", fontWeight: 500 }}>
+              Melde dich gerne!
+            </a>
           </p>
         </div>
       </section>
