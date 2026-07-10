@@ -1,6 +1,7 @@
-import { NavLink } from "react-router-dom";
+import { useAtelier } from "../data/atelier";
 
 export default function Footer() {
+  const atelier = useAtelier();
   return (
     <footer
       style={{
@@ -15,7 +16,7 @@ export default function Footer() {
           maxWidth: 1200,
           margin: "0 auto",
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+          gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
           gap: "2.5rem",
         }}
       >
@@ -31,34 +32,8 @@ export default function Footer() {
             Juls Pottery
           </p>
           <p style={{ fontSize: "0.875rem", color: "var(--muted-foreground)", lineHeight: 1.7 }}>
-            Kunst & Handwerk.<br />
-            Atelier in Landau.
+            Keramik · Kurse · Atelier
           </p>
-        </div>
-
-        <div>
-          <p style={{ fontSize: "0.75rem", fontWeight: 500, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--muted-foreground)", marginBottom: "1rem" }}>
-            Seiten
-          </p>
-          <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-            {[
-              { to: "/about", label: "Über mich" },
-              { to: "/kurse", label: "Kurse" },
-              { to: "/maerkte", label: "Märkte" },
-              { to: "/blog", label: "Blog" },
-            ].map(({ to, label }) => (
-              <li key={to}>
-                <NavLink
-                  to={to}
-                  style={{ fontSize: "0.875rem", color: "var(--muted-foreground)", transition: "color 0.2s" }}
-                  onMouseEnter={e => (e.currentTarget.style.color = "var(--foreground)")}
-                  onMouseLeave={e => (e.currentTarget.style.color = "var(--muted-foreground)")}
-                >
-                  {label}
-                </NavLink>
-              </li>
-            ))}
-          </ul>
         </div>
 
         <div>
@@ -71,9 +46,12 @@ export default function Footer() {
           >
             julia.billmaier@web.de
           </a>
-          <p style={{ fontSize: "0.875rem", color: "var(--muted-foreground)" }}>
-            Atelier in Landau
+          <p style={{ fontSize: "0.875rem", color: "var(--muted-foreground)", lineHeight: 1.8 }}>
+            {atelier ? atelier.address : "Pfortengasse 10, 76829 Landau"}
           </p>
+          {atelier && atelier.openingHours.split("\n").filter(Boolean).map((line) => (
+            <p key={line} style={{ fontSize: "0.875rem", color: "var(--muted-foreground)", lineHeight: 1.8 }}>{line}</p>
+          ))}
         </div>
       </div>
 
@@ -83,18 +61,10 @@ export default function Footer() {
           margin: "2.5rem auto 0",
           paddingTop: "1.5rem",
           borderTop: "1px solid var(--border)",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          flexWrap: "wrap",
-          gap: "0.5rem",
         }}
       >
         <p style={{ fontSize: "0.75rem", color: "var(--muted-foreground)" }}>
           © {new Date().getFullYear()} Juls Pottery
-        </p>
-        <p style={{ fontSize: "0.75rem", color: "var(--muted-foreground)" }}>
-          Kunst & Handwerk
         </p>
       </div>
     </footer>
