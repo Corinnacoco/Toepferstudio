@@ -31,7 +31,7 @@ export default function Home() {
           }}
           className="hero-text"
         >
-          <p style={{ fontSize: "0.75rem", fontWeight: 500, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--muted-foreground)", marginBottom: "1.5rem" }}>
+          <p style={{ fontSize: "0.75rem", fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "#5E87A1", marginBottom: "1.5rem" }}>
             Keramik · Kurse · Atelier
           </p>
           <h1
@@ -109,7 +109,7 @@ export default function Home() {
       {/* Kurse — schlichte Liste */}
       <section style={{ padding: "6rem 2rem", backgroundColor: "var(--background)", borderBottom: "1px solid var(--border)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "4rem", flexWrap: "wrap", gap: "1rem" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "4rem", flexWrap: "wrap", gap: "1rem" }} className="section-head">
             <h2 style={{ fontFamily: "Fraunces, Georgia, serif", fontSize: "clamp(2rem, 3.5vw, 3rem)", fontWeight: 600 }}>
               Aktuelle Kurse
             </h2>
@@ -217,9 +217,9 @@ export default function Home() {
           {/* Image panel — bleeds to edge */}
           <div style={{ overflow: "hidden", backgroundColor: "#2d607a" }}>
             <img
-              src="/atelier-3.jpg"
-              alt="Töpferscheibe in einer traditionellen Töpferei"
-              style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", filter: "saturate(0.8) brightness(0.75)", mixBlendMode: "multiply" }}
+              src="/atelier-2.jpg"
+              alt="Porträt von Julia"
+              style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", filter: "saturate(0.8) brightness(0.75)", mixBlendMode: "multiply" }}
             />
           </div>
         </div>
@@ -228,7 +228,7 @@ export default function Home() {
       {/* Markets teaser — loose list */}
       <section style={{ padding: "7rem 2rem", backgroundColor: "var(--background)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "4rem", flexWrap: "wrap", gap: "1rem" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "4rem", flexWrap: "wrap", gap: "1rem" }} className="section-head">
             <h2 style={{ fontFamily: "Fraunces, Georgia, serif", fontSize: "clamp(2rem, 3.5vw, 3rem)", fontWeight: 600 }}>
               Nächste Märkte
             </h2>
@@ -260,7 +260,7 @@ export default function Home() {
                   <p style={{ fontFamily: "Fraunces, Georgia, serif", fontSize: "1.25rem", fontWeight: 600 }}>{m.name}</p>
                   <p style={{ fontSize: "0.875rem", color: "var(--muted-foreground)" }}>{m.city}</p>
                 </div>
-                <span style={{ fontSize: "0.7rem", fontWeight: 500, letterSpacing: "0.08em", textTransform: "uppercase", color: "#8EB1C7", whiteSpace: "nowrap" }}>Kommt bald</span>
+
               </div>
             ))}
           </div>
@@ -294,6 +294,8 @@ export default function Home() {
         }
         @media (max-width: 600px) {
           .market-home-row { grid-template-columns: 1fr !important; gap: 0.25rem !important; }
+          .kurs-row { grid-template-columns: 1fr !important; gap: 0.25rem !important; }
+          .section-head { flex-direction: column !important; align-items: flex-start !important; gap: 0.75rem !important; margin-bottom: 2.5rem !important; }
         }
       `}</style>
     </div>
