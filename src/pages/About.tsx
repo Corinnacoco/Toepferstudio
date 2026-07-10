@@ -1,4 +1,7 @@
+import { useAtelier } from "../data/atelier";
+
 export default function About() {
+  const atelier = useAtelier();
   return (
     <div style={{ backgroundColor: "var(--background)" }}>
       {/* Hero */}
@@ -99,12 +102,47 @@ export default function About() {
         </div>
       </section>
 
+      {/* Atelier: Besuch & Öffnungszeiten (aus Sanity) */}
+      {atelier && (
+        <section style={{ padding: "6rem 2rem", backgroundColor: "var(--card)", borderTop: "1px solid var(--border)" }}>
+          <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem" }} className="atelier-info-grid">
+            <div>
+              <p style={{ fontSize: "0.75rem", fontWeight: 500, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--muted-foreground)", marginBottom: "1rem" }}>
+                Besuch
+              </p>
+              <h2 style={{ fontFamily: "Fraunces, Georgia, serif", fontSize: "clamp(1.5rem, 3vw, 2rem)", fontWeight: 600, marginBottom: "1.5rem" }}>
+                Das Atelier
+              </h2>
+              <p style={{ fontSize: "1.0625rem", lineHeight: 1.75, color: "var(--muted-foreground)" }}>
+                {atelier.description}
+              </p>
+              {atelier.note && (
+                <p style={{ marginTop: "1.25rem", fontSize: "0.9375rem", fontStyle: "italic", color: "var(--primary)" }}>
+                  {atelier.note}
+                </p>
+              )}
+            </div>
+            <div style={{ backgroundColor: "var(--background)", border: "1px solid var(--border)", padding: "2.5rem 2rem", alignSelf: "start" }}>
+              <h3 style={{ fontFamily: "Fraunces, Georgia, serif", fontSize: "1.125rem", fontWeight: 600, marginBottom: "0.75rem" }}>Adresse</h3>
+              <p style={{ fontSize: "0.9375rem", lineHeight: 1.75, color: "var(--muted-foreground)", marginBottom: "1.75rem" }}>{atelier.address}</p>
+              <h3 style={{ fontFamily: "Fraunces, Georgia, serif", fontSize: "1.125rem", fontWeight: 600, marginBottom: "0.75rem" }}>Öffnungszeiten</h3>
+              <div>
+                {atelier.openingHours.split("\n").filter(Boolean).map((line) => (
+                  <p key={line} style={{ fontSize: "0.9375rem", lineHeight: 1.9, color: "var(--muted-foreground)" }}>{line}</p>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       <style>{`
         @media (max-width: 900px) {
           .about-hero { grid-template-columns: 1fr !important; min-height: auto !important; }
           .about-hero-text { padding: 3.5rem 1.5rem !important; }
           .studio-gallery { grid-template-columns: 1fr 1fr !important; grid-template-rows: auto !important; }
           .studio-gallery > div:first-child { grid-row: auto !important; }
+          .atelier-info-grid { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
         }
       `}</style>
     </div>
