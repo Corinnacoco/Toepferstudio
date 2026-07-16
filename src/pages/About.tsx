@@ -1,4 +1,5 @@
 import { useAtelier } from "../data/atelier";
+import WavyLine from "../components/WavyLine";
 
 export default function About() {
   const atelier = useAtelier();
@@ -55,9 +56,47 @@ export default function About() {
       </section>
 
       {/* Studio photos */}
-      <section style={{ backgroundColor: "var(--card)", padding: "5rem 2rem", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)" }}>
+
+      {/* Atelier: Besuch & Öffnungszeiten (aus Sanity) */}
+      {atelier && (
+        <section style={{ padding: "5rem 2rem 4rem", backgroundColor: "var(--card)" }}>
+          <div style={{ maxWidth: 1200, margin: "0 auto 4rem" }}>
+            <WavyLine />
+          </div>
+          <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem" }} className="atelier-info-grid">
+            <div>
+              <p style={{ fontSize: "0.75rem", fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "#5E87A1", marginBottom: "1rem" }}>
+                Besuch
+              </p>
+              <h2 style={{ fontFamily: "Fraunces, Georgia, serif", fontSize: "clamp(1.5rem, 3vw, 2rem)", fontWeight: 600, marginBottom: "1.5rem" }}>
+                Das Atelier
+              </h2>
+              <p style={{ fontSize: "1.0625rem", lineHeight: 1.75, color: "var(--muted-foreground)" }}>
+                {atelier.description}
+              </p>
+              {atelier.note && (
+                <p style={{ marginTop: "1.25rem", fontSize: "0.9375rem", fontStyle: "italic", color: "var(--primary)" }}>
+                  {atelier.note}
+                </p>
+              )}
+            </div>
+            <div style={{ backgroundColor: "#E9F0F5", border: "1px solid #B9CEDC", borderRadius: "2.5rem 1.5rem 3rem 1.25rem", padding: "2.5rem 2rem", alignSelf: "start" }}>
+              <h3 style={{ fontFamily: "Fraunces, Georgia, serif", fontSize: "1.125rem", fontWeight: 600, marginBottom: "0.75rem" }}>Adresse</h3>
+              <p style={{ fontSize: "0.9375rem", lineHeight: 1.75, color: "var(--muted-foreground)", marginBottom: "1.75rem" }}>{atelier.address}</p>
+              <h3 style={{ fontFamily: "Fraunces, Georgia, serif", fontSize: "1.125rem", fontWeight: 600, marginBottom: "0.75rem" }}>Öffnungszeiten</h3>
+              <div>
+                {atelier.openingHours.split("\n").filter(Boolean).map((line) => (
+                  <p key={line} style={{ fontSize: "0.9375rem", lineHeight: 1.9, color: "var(--muted-foreground)" }}>{line}</p>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      <section style={{ backgroundColor: "var(--card)", padding: "0 2rem 5rem" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <p style={{ fontSize: "0.75rem", fontWeight: 500, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--muted-foreground)", marginBottom: "2.5rem" }}>
+          <p style={{ fontSize: "0.75rem", fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "#5E87A1", marginBottom: "2.5rem" }}>
             Das Atelier
           </p>
           <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gridTemplateRows: "auto auto", gap: "4px" }} className="studio-gallery">
@@ -83,17 +122,20 @@ export default function About() {
       {/* Values */}
       <section style={{ padding: "7rem 2rem" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+          <div style={{ marginBottom: "4rem" }}>
+            <WavyLine />
+          </div>
           <h2 style={{ fontFamily: "Fraunces, Georgia, serif", fontSize: "clamp(1.5rem, 3vw, 2rem)", fontWeight: 600, marginBottom: "4rem" }}>
             Was mich ausmacht
           </h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "1px", backgroundColor: "var(--border)", border: "1px solid var(--border)" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "1.5rem" }}>
             {[
-              { title: "Handwerk", body: "Fundierte Ausbildung an der Berufsfachschule für Keramik in Landshut: vom Drehen an der Scheibe über Formenbau und Gipsformen bis zu Dekortechniken." },
-              { title: "Gebrauchskeramik", body: "Ich mache Keramik für den Alltag: Tassen, Teller und Schüsseln, die benutzt werden wollen, schön und praktisch zugleich." },
-              { title: "Kurse", body: "Mein Wissen teile ich gerne weiter. In meinen Töpferkursen könnt ihr das Handwerk selbst erleben und eure eigenen Stücke gestalten." },
-              { title: "Atelier in Landau", body: "Im entstehenden Gemeinschaftsatelier in Landau findet ihr meine Stücke zum Verkauf, und mich, wenn ihr vorbeischauen möchtet." },
-            ].map(({ title, body }) => (
-              <div key={title} style={{ backgroundColor: "var(--background)", padding: "2.5rem 2rem" }}>
+              { title: "Handwerk", body: "Fundierte Ausbildung an der Berufsfachschule für Keramik in Landshut: vom Drehen an der Scheibe über Formenbau und Gipsformen bis zu Dekortechniken.", radius: "3rem 1.25rem 2.5rem 1.5rem" },
+              { title: "Gebrauchskeramik", body: "Ich mache Keramik für den Alltag: Tassen, Teller und Schüsseln, die benutzt werden wollen, schön und praktisch zugleich.", radius: "1.5rem 3rem 1.25rem 2.75rem" },
+              { title: "Kurse", body: "Mein Wissen teile ich gerne weiter. In meinen Töpferkursen könnt ihr das Handwerk selbst erleben und eure eigenen Stücke gestalten.", radius: "2.75rem 1.5rem 3rem 1.25rem" },
+              { title: "Atelier in Landau", body: "Im entstehenden Gemeinschaftsatelier in Landau findet ihr meine Stücke zum Verkauf, und mich, wenn ihr vorbeischauen möchtet.", radius: "1.25rem 2.5rem 1.5rem 3rem" },
+            ].map(({ title, body, radius }) => (
+              <div key={title} style={{ backgroundColor: "var(--background)", border: "1px solid var(--border)", borderRadius: radius, padding: "2.75rem 2.25rem" }}>
                 <h3 style={{ fontFamily: "Fraunces, Georgia, serif", fontSize: "1.25rem", fontWeight: 600, marginBottom: "0.875rem" }}>{title}</h3>
                 <p style={{ fontSize: "0.9375rem", lineHeight: 1.75, color: "var(--muted-foreground)" }}>{body}</p>
               </div>
@@ -102,39 +144,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* Atelier: Besuch & Öffnungszeiten (aus Sanity) */}
-      {atelier && (
-        <section style={{ padding: "6rem 2rem", backgroundColor: "var(--card)", borderTop: "1px solid var(--border)" }}>
-          <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem" }} className="atelier-info-grid">
-            <div>
-              <p style={{ fontSize: "0.75rem", fontWeight: 500, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--muted-foreground)", marginBottom: "1rem" }}>
-                Besuch
-              </p>
-              <h2 style={{ fontFamily: "Fraunces, Georgia, serif", fontSize: "clamp(1.5rem, 3vw, 2rem)", fontWeight: 600, marginBottom: "1.5rem" }}>
-                Das Atelier
-              </h2>
-              <p style={{ fontSize: "1.0625rem", lineHeight: 1.75, color: "var(--muted-foreground)" }}>
-                {atelier.description}
-              </p>
-              {atelier.note && (
-                <p style={{ marginTop: "1.25rem", fontSize: "0.9375rem", fontStyle: "italic", color: "var(--primary)" }}>
-                  {atelier.note}
-                </p>
-              )}
-            </div>
-            <div style={{ backgroundColor: "var(--background)", border: "1px solid var(--border)", padding: "2.5rem 2rem", alignSelf: "start" }}>
-              <h3 style={{ fontFamily: "Fraunces, Georgia, serif", fontSize: "1.125rem", fontWeight: 600, marginBottom: "0.75rem" }}>Adresse</h3>
-              <p style={{ fontSize: "0.9375rem", lineHeight: 1.75, color: "var(--muted-foreground)", marginBottom: "1.75rem" }}>{atelier.address}</p>
-              <h3 style={{ fontFamily: "Fraunces, Georgia, serif", fontSize: "1.125rem", fontWeight: 600, marginBottom: "0.75rem" }}>Öffnungszeiten</h3>
-              <div>
-                {atelier.openingHours.split("\n").filter(Boolean).map((line) => (
-                  <p key={line} style={{ fontSize: "0.9375rem", lineHeight: 1.9, color: "var(--muted-foreground)" }}>{line}</p>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
 
       <style>{`
         @media (max-width: 900px) {
