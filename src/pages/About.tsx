@@ -117,7 +117,7 @@ export default function About() {
               { title: "Handwerk", body: "Fundierte Ausbildung an der Berufsfachschule für Keramik in Landshut: vom Drehen an der Scheibe über Formenbau und Gipsformen bis zu Dekortechniken.", radius: "3rem 1.25rem 2.5rem 1.5rem" },
               { title: "Gebrauchskeramik", body: "Ich mache Keramik für den Alltag: Tassen, Teller und Schüsseln, die benutzt werden wollen, schön und praktisch zugleich.", radius: "1.5rem 3rem 1.25rem 2.75rem" },
               { title: "Kurse", body: "Mein Wissen teile ich gerne weiter. In meinen Töpferkursen könnt ihr das Handwerk selbst erleben und eure eigenen Stücke gestalten.", radius: "2.75rem 1.5rem 3rem 1.25rem" },
-              { title: "Atelier in Landau", body: "In unserem Gemeinschaftsatelier in Landau entstehen meine Keramikstücke und finden meine Töpferkurse statt. Hier könnt ihr meine Arbeiten entdecken, selbst kreativ werden oder einfach im Atelier vorbeischauen.", radius: "1.25rem 2.5rem 1.5rem 3rem" },
+              { title: "Atelier in Landau", body: "In unserem Gemeinschaftsatelier in Landau entstehen meine Keramikstücke und finden Töpferkurse statt. Kommt vorbei um meine Arbeiten zu entdecken und selbst kreativ zu werden.", radius: "1.25rem 2.5rem 1.5rem 3rem" },
             ].map(({ title, body, radius }) => (
               <div key={title} style={{ backgroundColor: "var(--background)", border: "1px solid var(--border)", borderRadius: radius, padding: "2.75rem 2.25rem" }}>
                 <h3 style={{ fontFamily: "Fraunces, Georgia, serif", fontSize: "1.25rem", fontWeight: 600, marginBottom: "0.875rem" }}>{title}</h3>
