@@ -219,7 +219,7 @@ export default function Home() {
             <img
               src="/atelier-2.jpg"
               alt="Porträt von Julia"
-              style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", filter: "saturate(0.8) brightness(0.75)", mixBlendMode: "multiply" }}
+              style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", filter: "saturate(0.9) brightness(0.95)" }}
             />
           </div>
         </div>
