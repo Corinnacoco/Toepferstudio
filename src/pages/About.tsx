@@ -40,7 +40,7 @@ export default function About() {
       </section>
 
       {/* Story */}
-      <section style={{ padding: "7rem 2rem", borderBottom: "1px solid var(--border)" }}>
+      <section style={{ padding: "7rem 2rem 5rem" }}>
         <div style={{ maxWidth: 800, margin: "0 auto" }}>
           <h2 style={{ fontFamily: "Fraunces, Georgia, serif", fontSize: "clamp(1.5rem, 3vw, 2rem)", fontWeight: 600, marginBottom: "2rem" }}>
             Mein Weg zur Keramik
@@ -50,6 +50,29 @@ export default function About() {
             <p>Nach der Ausbildung in Landshut zog es mich zurück in meine Heimat Baden-Württemberg. Dort hatte ich zunächst eine kleine Werkstatt im Keller meiner Wohnung in Filderstadt, später konnte ich eine Werkstatt in Stuttgart mitnutzen.</p>
             <p>Eine Reise in die Türkei 2025 hat mich besonders inspiriert: Dort durfte ich eine Töpferei erleben und an Drehscheiben ganz ohne Strom arbeiten. Es war ein sehr besonderes Erlebnis, das mir gezeigt hat, wie ursprünglich dieses Handwerk sein kann.</p>
             <p>Nun entsteht ein Gemeinschaftsatelier in Landau, mit dem Verkauf meiner Stücke und Töpferkursen. Ich freue mich sehr über euren Besuch in meinem Atelier und darauf, mein Wissen in einem Kurs mit euch teilen zu dürfen.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Studio photos direkt unter der Geschichte */}
+      <section style={{ backgroundColor: "var(--card)", padding: "0 2rem 5rem" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gridTemplateRows: "auto auto", gap: "4px" }} className="studio-gallery">
+            <div style={{ gridRow: "1 / 3", backgroundColor: "var(--secondary)", overflow: "hidden", maxHeight: 520 }}>
+              <img src="/atelier-3.jpg" alt="Eingang Atelier" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", filter: "saturate(0.85)" }} />
+            </div>
+            <div style={{ backgroundColor: "var(--secondary)", overflow: "hidden", aspectRatio: "1" }}>
+              <img src="/atelier-1.jpg" alt="Raum mit Holzofen" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", filter: "saturate(0.8)" }} />
+            </div>
+            <div style={{ backgroundColor: "var(--secondary)", overflow: "hidden", aspectRatio: "1" }}>
+              <img src="/atelier-5.jpg" alt="Küche und Keramiklampen" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", filter: "saturate(0.8)" }} />
+            </div>
+            <div style={{ backgroundColor: "var(--secondary)", overflow: "hidden", aspectRatio: "16/9" }}>
+              <img src="/atelier-4.jpg" alt="Werkstatt mit Drehscheibe" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", filter: "saturate(0.8)" }} />
+            </div>
+            <div style={{ backgroundColor: "var(--secondary)", overflow: "hidden", aspectRatio: "16/9" }}>
+              <img src="/atelier-2.jpg" alt="Atelier Durchblick" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center bottom", filter: "saturate(0.8)" }} />
+            </div>
           </div>
         </div>
       </section>
@@ -87,31 +110,6 @@ export default function About() {
           </div>
         </section>
       )}
-
-      <section style={{ backgroundColor: "var(--card)", padding: "0 2rem 5rem" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <p style={{ fontSize: "0.75rem", fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "#5E87A1", marginBottom: "2.5rem" }}>
-            Das Atelier
-          </p>
-          <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gridTemplateRows: "auto auto", gap: "4px" }} className="studio-gallery">
-            <div style={{ gridRow: "1 / 3", backgroundColor: "var(--secondary)", overflow: "hidden", maxHeight: 520 }}>
-              <img src="/atelier-3.jpg" alt="Eingang Atelier" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", filter: "saturate(0.85)" }} />
-            </div>
-            <div style={{ backgroundColor: "var(--secondary)", overflow: "hidden", aspectRatio: "1" }}>
-              <img src="/atelier-1.jpg" alt="Raum mit Holzofen" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", filter: "saturate(0.8)" }} />
-            </div>
-            <div style={{ backgroundColor: "var(--secondary)", overflow: "hidden", aspectRatio: "1" }}>
-              <img src="/atelier-5.jpg" alt="Küche und Keramiklampen" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", filter: "saturate(0.8)" }} />
-            </div>
-            <div style={{ backgroundColor: "var(--secondary)", overflow: "hidden", aspectRatio: "16/9" }}>
-              <img src="/atelier-4.jpg" alt="Werkstatt mit Drehscheibe" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", filter: "saturate(0.8)" }} />
-            </div>
-            <div style={{ backgroundColor: "var(--secondary)", overflow: "hidden", aspectRatio: "16/9" }}>
-              <img src="/atelier-2.jpg" alt="Atelier Durchblick" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center bottom", filter: "saturate(0.8)" }} />
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Values */}
       <section style={{ padding: "7rem 2rem" }}>
