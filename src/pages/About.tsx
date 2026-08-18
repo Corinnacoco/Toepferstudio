@@ -58,9 +58,7 @@ export default function About() {
             {[
               { src: "/atelier-3.jpg", alt: "Julia beim Töpfern", position: "center" },
               { src: "/atelier-1.jpg", alt: "Julia an der Töpferscheibe", position: "center" },
-              { src: "/atelier-5.jpg", alt: "Hände an der Töpferscheibe", position: "center" },
               { src: "/atelier-4.jpg", alt: "Keramik und Werkzeuge im Atelier", position: "center" },
-              { src: "/atelier-2.jpg", alt: "Porträt von Julia", position: "center" },
             ].map(({ src, alt, position }) => (
               <div key={src + alt} style={{ aspectRatio: "1", overflow: "hidden", backgroundColor: "var(--secondary)" }}>
                 <img
