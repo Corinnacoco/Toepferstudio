@@ -39,8 +39,8 @@ export default function About() {
         </div>
       </section>
 
-      {/* Story */}
-      <section style={{ padding: "7rem 2rem 5rem" }}>
+      {/* Story + Galerie als zusammengehöriger Block */}
+      <section style={{ padding: "7rem 2rem", borderBottom: "1px solid var(--border)" }}>
         <div style={{ maxWidth: 800, margin: "0 auto" }}>
           <h2 style={{ fontFamily: "Fraunces, Georgia, serif", fontSize: "clamp(1.5rem, 3vw, 2rem)", fontWeight: 600, marginBottom: "2rem" }}>
             Mein Weg zur Keramik
@@ -52,43 +52,40 @@ export default function About() {
             <p>Nun entsteht ein Gemeinschaftsatelier in Landau, mit dem Verkauf meiner Stücke und Töpferkursen. Ich freue mich sehr über euren Besuch in meinem Atelier und darauf, mein Wissen in einem Kurs mit euch teilen zu dürfen.</p>
           </div>
         </div>
-      </section>
 
-      {/* Studio photos direkt unter der Geschichte */}
-      <section style={{ backgroundColor: "var(--card)", padding: "0 2rem 5rem" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gridTemplateRows: "auto auto", gap: "4px" }} className="studio-gallery">
-            <div style={{ gridRow: "1 / 3", backgroundColor: "var(--secondary)", overflow: "hidden", maxHeight: 520 }}>
-              <img src="/atelier-3.jpg" alt="Eingang Atelier" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", filter: "saturate(0.85)" }} />
-            </div>
-            <div style={{ backgroundColor: "var(--secondary)", overflow: "hidden", aspectRatio: "1" }}>
-              <img src="/atelier-1.jpg" alt="Raum mit Holzofen" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", filter: "saturate(0.8)" }} />
-            </div>
-            <div style={{ backgroundColor: "var(--secondary)", overflow: "hidden", aspectRatio: "1" }}>
-              <img src="/atelier-5.jpg" alt="Küche und Keramiklampen" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", filter: "saturate(0.8)" }} />
-            </div>
-            <div style={{ backgroundColor: "var(--secondary)", overflow: "hidden", aspectRatio: "16/9" }}>
-              <img src="/atelier-4.jpg" alt="Werkstatt mit Drehscheibe" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", filter: "saturate(0.8)" }} />
-            </div>
-            <div style={{ backgroundColor: "var(--secondary)", overflow: "hidden", aspectRatio: "16/9" }}>
-              <img src="/atelier-2.jpg" alt="Atelier Durchblick" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center bottom", filter: "saturate(0.8)" }} />
-            </div>
+        <div style={{ maxWidth: 1100, margin: "4rem auto 0" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "8px" }} className="story-gallery">
+            {[
+              { src: "/atelier-3.jpg", alt: "Julia beim Töpfern", position: "center" },
+              { src: "/atelier-1.jpg", alt: "Julia an der Töpferscheibe", position: "center" },
+              { src: "/atelier-5.jpg", alt: "Hände an der Töpferscheibe", position: "center" },
+              { src: "/atelier-4.jpg", alt: "Keramik und Werkzeuge im Atelier", position: "center" },
+              { src: "/atelier-2.jpg", alt: "Porträt von Julia", position: "center" },
+            ].map(({ src, alt, position }) => (
+              <div key={src + alt} style={{ aspectRatio: "1", overflow: "hidden", backgroundColor: "var(--secondary)" }}>
+                <img
+                  src={src}
+                  alt={alt}
+                  style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: position, filter: "saturate(0.85)", display: "block" }}
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Atelier: Besuch & Öffnungszeiten (aus Sanity) */}
+      {/* Atelier: eigener Block */}
       {atelier && (
-        <section style={{ padding: "5rem 2rem 4rem", backgroundColor: "var(--card)" }}>
-          <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem" }} className="atelier-info-grid">
+        <section style={{ padding: "6rem 2rem", backgroundColor: "var(--card)", borderBottom: "1px solid var(--border)" }}>
+          <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "start" }} className="atelier-info-grid">
             <div>
               <p style={{ fontSize: "0.75rem", fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "#5E87A1", marginBottom: "1rem" }}>
                 Besuch
               </p>
-              <h2 style={{ fontFamily: "Fraunces, Georgia, serif", fontSize: "clamp(1.5rem, 3vw, 2rem)", fontWeight: 600, marginBottom: "1.5rem" }}>
+              <h2 style={{ fontFamily: "Fraunces, Georgia, serif", fontSize: "clamp(1.75rem, 3vw, 2.4rem)", fontWeight: 600, marginBottom: "1.5rem" }}>
                 Das Atelier
               </h2>
-              <p style={{ fontSize: "1.0625rem", lineHeight: 1.75, color: "var(--muted-foreground)" }}>
+              <p style={{ fontSize: "1.0625rem", lineHeight: 1.75, color: "var(--muted-foreground)", maxWidth: 500 }}>
                 {atelier.description}
               </p>
               {atelier.note && (
@@ -97,7 +94,7 @@ export default function About() {
                 </p>
               )}
             </div>
-            <div style={{ backgroundColor: "#E9F0F5", border: "1px solid #B9CEDC", borderRadius: "2.5rem 1.5rem 3rem 1.25rem", padding: "2.5rem 2rem", alignSelf: "start" }}>
+            <div style={{ backgroundColor: "#E9F0F5", border: "1px solid #B9CEDC", borderRadius: "2.5rem 1.5rem 3rem 1.25rem", padding: "2.75rem 2.25rem" }}>
               <h3 style={{ fontFamily: "Fraunces, Georgia, serif", fontSize: "1.125rem", fontWeight: 600, marginBottom: "0.75rem" }}>Adresse</h3>
               <p style={{ fontSize: "0.9375rem", lineHeight: 1.75, color: "var(--muted-foreground)", marginBottom: "1.75rem" }}>{atelier.address}</p>
               <h3 style={{ fontFamily: "Fraunces, Georgia, serif", fontSize: "1.125rem", fontWeight: 600, marginBottom: "0.75rem" }}>Öffnungszeiten</h3>
@@ -137,9 +134,11 @@ export default function About() {
         @media (max-width: 900px) {
           .about-hero { grid-template-columns: 1fr !important; min-height: auto !important; }
           .about-hero-text { padding: 3.5rem 1.5rem !important; }
-          .studio-gallery { grid-template-columns: 1fr 1fr !important; grid-template-rows: auto !important; }
-          .studio-gallery > div:first-child { grid-row: auto !important; }
+          .story-gallery { grid-template-columns: 1fr 1fr !important; }
           .atelier-info-grid { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
+        }
+        @media (max-width: 520px) {
+          .story-gallery { grid-template-columns: 1fr !important; }
         }
       `}</style>
     </div>
