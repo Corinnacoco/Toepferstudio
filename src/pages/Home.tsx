@@ -215,12 +215,13 @@ export default function Home() {
           </div>
 
           {/* Image panel — bleeds to edge */}
-          <div style={{ overflow: "hidden", backgroundColor: "#2d607a" }}>
+          <div className="about-image-panel" style={{ overflow: "hidden", backgroundColor: "#2d607a", position: "relative" }}>
             <img
               src="/atelier-2.jpg"
               alt="Porträt von Julia"
-              style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", filter: "saturate(0.9) brightness(0.95)" }}
+              style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", filter: "saturate(0.9) brightness(0.95)", display: "block" }}
             />
+            <div className="about-image-overlay" aria-hidden="true" />
           </div>
         </div>
       </section>
@@ -281,6 +282,16 @@ export default function Home() {
       </section>
 
       <style>{`
+        .about-image-overlay {
+          position: absolute;
+          inset: 0;
+          background: rgba(45, 96, 122, 0.24);
+          pointer-events: none;
+          transition: opacity 0.4s ease;
+        }
+        .about-image-panel:hover .about-image-overlay {
+          opacity: 0;
+        }
         @media (max-width: 900px) {
           .hero-grid { grid-template-columns: 1fr !important; min-height: auto !important; }
           .hero-text { padding: 4rem 1.5rem !important; margin: 0 !important; max-width: 100% !important; }
