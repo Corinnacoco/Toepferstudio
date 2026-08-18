@@ -1,5 +1,4 @@
 import { useAtelier } from "../data/atelier";
-import WavyLine from "../components/WavyLine";
 
 export default function About() {
   const atelier = useAtelier();
@@ -55,14 +54,9 @@ export default function About() {
         </div>
       </section>
 
-      {/* Studio photos */}
-
       {/* Atelier: Besuch & Öffnungszeiten (aus Sanity) */}
       {atelier && (
         <section style={{ padding: "5rem 2rem 4rem", backgroundColor: "var(--card)" }}>
-          <div style={{ maxWidth: 1200, margin: "0 auto 4rem" }}>
-            <WavyLine />
-          </div>
           <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem" }} className="atelier-info-grid">
             <div>
               <p style={{ fontSize: "0.75rem", fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "#5E87A1", marginBottom: "1rem" }}>
@@ -122,9 +116,6 @@ export default function About() {
       {/* Values */}
       <section style={{ padding: "7rem 2rem" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <div style={{ marginBottom: "4rem" }}>
-            <WavyLine />
-          </div>
           <h2 style={{ fontFamily: "Fraunces, Georgia, serif", fontSize: "clamp(1.5rem, 3vw, 2rem)", fontWeight: 600, marginBottom: "4rem" }}>
             Was mich ausmacht
           </h2>
@@ -143,7 +134,6 @@ export default function About() {
           </div>
         </div>
       </section>
-
 
       <style>{`
         @media (max-width: 900px) {
