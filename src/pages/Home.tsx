@@ -95,12 +95,13 @@ export default function Home() {
         </div>
 
         {/* Image side */}
-        <div style={{ overflow: "hidden", backgroundColor: "var(--secondary)" }} className="hero-image">
+        <div style={{ overflow: "hidden", backgroundColor: "var(--secondary)", position: "relative" }} className="hero-image home-image-panel">
           <img
             src="/atelier-5.jpg"
             alt="Hände formen Ton an der Töpferscheibe"
-            style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center center", filter: "saturate(0.85)" }}
+            style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center center", filter: "saturate(0.85)", display: "block" }}
           />
+          <div className="home-image-overlay" aria-hidden="true" />
         </div>
       </section>
 
@@ -215,13 +216,13 @@ export default function Home() {
           </div>
 
           {/* Image panel — bleeds to edge */}
-          <div className="about-image-panel" style={{ overflow: "hidden", backgroundColor: "#2d607a", position: "relative" }}>
+          <div className="home-image-panel" style={{ overflow: "hidden", backgroundColor: "#2d607a", position: "relative" }}>
             <img
               src="/atelier-2.jpg"
               alt="Porträt von Julia"
               style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", filter: "saturate(0.9) brightness(0.95)", display: "block" }}
             />
-            <div className="about-image-overlay" aria-hidden="true" />
+            <div className="home-image-overlay" aria-hidden="true" />
           </div>
         </div>
       </section>
@@ -270,26 +271,29 @@ export default function Home() {
 
       {/* Keramik-Galerie — volle Breite */}
       <section style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "4px", backgroundColor: "var(--background)" }} className="keramik-galerie">
-        <div style={{ overflow: "hidden", backgroundColor: "var(--secondary)", aspectRatio: "4/3" }}>
-          <img src="/keramik-schalen-tassen.jpg" alt="Handgemachte Schalen und Tassen" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", filter: "saturate(0.85)" }} />
+        <div className="home-image-panel" style={{ overflow: "hidden", backgroundColor: "var(--secondary)", aspectRatio: "4/3", position: "relative" }}>
+          <img src="/keramik-schalen-tassen.jpg" alt="Handgemachte Schalen und Tassen" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", filter: "saturate(0.85)", display: "block" }} />
+          <div className="home-image-overlay" aria-hidden="true" />
         </div>
-        <div style={{ overflow: "hidden", backgroundColor: "var(--secondary)", aspectRatio: "4/3" }}>
-          <img src="/keramik-schuesseln.jpg" alt="Handgemachte Keramikschüsseln" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", filter: "saturate(0.85)" }} />
+        <div className="home-image-panel" style={{ overflow: "hidden", backgroundColor: "var(--secondary)", aspectRatio: "4/3", position: "relative" }}>
+          <img src="/keramik-schuesseln.jpg" alt="Handgemachte Keramikschüsseln" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", filter: "saturate(0.85)", display: "block" }} />
+          <div className="home-image-overlay" aria-hidden="true" />
         </div>
-        <div style={{ overflow: "hidden", backgroundColor: "var(--secondary)", aspectRatio: "4/3" }}>
-          <img src="/home-2.jpg" alt="Zwei handgemachte Keramiktassen" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", filter: "saturate(0.85)" }} />
+        <div className="home-image-panel" style={{ overflow: "hidden", backgroundColor: "var(--secondary)", aspectRatio: "4/3", position: "relative" }}>
+          <img src="/home-2.jpg" alt="Zwei handgemachte Keramiktassen" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", filter: "saturate(0.85)", display: "block" }} />
+          <div className="home-image-overlay" aria-hidden="true" />
         </div>
       </section>
 
       <style>{`
-        .about-image-overlay {
+        .home-image-overlay {
           position: absolute;
           inset: 0;
           background: rgba(45, 96, 122, 0.24);
           pointer-events: none;
           transition: opacity 0.4s ease;
         }
-        .about-image-panel:hover .about-image-overlay {
+        .home-image-panel:hover .home-image-overlay {
           opacity: 0;
         }
         @media (max-width: 900px) {
