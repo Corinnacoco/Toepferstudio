@@ -31,11 +31,11 @@ export default function Courses() {
               marginBottom: "1.25rem",
             }}
           >
-            Kurse & Workshops
+            Kurse
           </h1>
           <p style={{ fontSize: "1.0625rem", color: "var(--muted-foreground)", maxWidth: 560, lineHeight: 1.75 }}>
             In kleinen Gruppen teile ich mein Wissen über Ton und Techniken mit euch.
-            Im Wechsel biete ich Drehkurse und Handaufbaukurse an, für Anfängerinnen und
+            Ich biete sowohl Drehkurse und Handaufbaukurse an, für Anfängerinnen und
             Anfänger ebenso wie für Fortgeschrittene. Ich freue mich auf euch!
           </p>
         </div>
