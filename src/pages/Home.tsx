@@ -142,7 +142,7 @@ export default function Home() {
                   <p style={{ fontSize: "0.875rem", color: "var(--muted-foreground)" }}>{course.duration} · max. {course.maxParticipants} Pers.</p>
                 </div>
                 <a
-                  href={`mailto:hallo@beispiel.de?subject=Anmeldung: ${encodeURIComponent(course.title)}`}
+                  href={`mailto:hello@julspottery.de?subject=Anmeldung: ${encodeURIComponent(course.title)}`}
                   style={{ fontSize: "0.7rem", fontWeight: 500, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--accent)", whiteSpace: "nowrap", transition: "color 0.15s" }}
                   onMouseEnter={e => (e.currentTarget.style.color = "var(--primary)")}
                   onMouseLeave={e => (e.currentTarget.style.color = "var(--accent)")}
