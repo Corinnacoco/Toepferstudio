@@ -5,8 +5,8 @@ const DATASET = "production";
 const API_VERSION = "2024-01-01";
 
 export async function sanityFetch<T>(query: string): Promise<T> {
-  const url = `https://${PROJECT_ID}.apicdn.sanity.io/v${API_VERSION}/data/query/${DATASET}?query=${encodeURIComponent(query)}`;
-  const res = await fetch(url);
+  const url = `https://${PROJECT_ID}.api.sanity.io/v${API_VERSION}/data/query/${DATASET}?query=${encodeURIComponent(query)}`;
+  const res = await fetch(url, { cache: "no-store" });
   if (!res.ok) throw new Error(`Sanity request failed: ${res.status}`);
   const json = await res.json();
   return json.result as T;
