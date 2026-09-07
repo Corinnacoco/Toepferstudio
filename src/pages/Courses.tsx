@@ -53,10 +53,10 @@ export default function Courses() {
           <span style={{ fontSize: "0.875rem", color: "var(--foreground)" }}>
             📩 <strong>Anmeldung</strong>: einfach per Mail an{" "}
             <a
-              href="mailto:hallo@juls-pottery.de"
+              href="mailto:hello@julspottery.de"
               style={{ color: "var(--primary)", fontWeight: 500 }}
             >
-              hallo@juls-pottery.de
+              hello@julspottery.de
             </a>
             {" "}mit dem gewünschten Kurs
           </span>
@@ -194,7 +194,7 @@ export default function Courses() {
                 </div>
 
                 <a
-                  href={`mailto:hallo@juls-pottery.de?subject=Anmeldung: ${encodeURIComponent(course.title)}&body=Hallo,%0A%0Aich möchte mich gerne für den Kurs "${encodeURIComponent(course.title)}" am ${encodeURIComponent(course.date)} anmelden.%0A%0AMein Name: %0A%0AVielen Dank!`}
+                  href={`mailto:hello@julspottery.de?subject=Anmeldung: ${encodeURIComponent(course.title)}&body=Hallo,%0A%0Aich möchte mich gerne für den Kurs "${encodeURIComponent(course.title)}" am ${encodeURIComponent(course.date)} anmelden.%0A%0AMein Name: %0A%0AVielen Dank!`}
                   style={{
                     display: "block",
                     textAlign: "center",
