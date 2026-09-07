@@ -24,7 +24,7 @@ export default function Markets() {
           </p>
           <p style={{ fontSize: "1.0625rem", color: "var(--muted-foreground)", maxWidth: 560, lineHeight: 1.75 }}>
             Nimmst du selbst an Märkten teil und suchst noch jemanden, um dir einen Stand zu teilen?{" "}
-            <a href="mailto:julia.billmaier@web.de" style={{ color: "var(--primary)", fontWeight: 500 }}>
+            <a href="mailto:hello@julspottery.de" style={{ color: "var(--primary)", fontWeight: 500 }}>
               Melde dich gerne!
             </a>
           </p>
