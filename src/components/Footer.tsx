@@ -41,10 +41,10 @@ export default function Footer() {
             Kontakt
           </p>
           <a
-            href="mailto:hallo@juls-pottery.de"
+            href="mailto:hello@julspottery.de"
             style={{ fontSize: "0.875rem", color: "var(--primary)", display: "block", marginBottom: "0.5rem" }}
           >
-            hallo@juls-pottery.de
+            hello@julspottery.de
           </a>
           <p style={{ fontSize: "0.875rem", color: "var(--muted-foreground)", lineHeight: 1.8 }}>
             {atelier ? atelier.address : "Pfortengasse 10, 76829 Landau"}
