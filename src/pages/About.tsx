@@ -81,10 +81,10 @@ export default function About() {
                 Besuch
               </p>
               <h2 style={{ fontFamily: "Fraunces, Georgia, serif", fontSize: "clamp(1.75rem, 3vw, 2.4rem)", fontWeight: 600, marginBottom: "1.5rem" }}>
-                Das Atelier
+                Pforte 10 Ateliergemeinschaft
               </h2>
               <p style={{ fontSize: "1.0625rem", lineHeight: 1.75, color: "var(--muted-foreground)", maxWidth: 500 }}>
-                {atelier.description}
+                In der Ateliergemeinschaft <a href="https://pforte10.de" style={{ color: "var(--primary)", textDecoration: "underline", textUnderlineOffset: "0.15em" }}>Pforte 10</a> in Landau entstehen meine Stücke. Hier findet ihr Gebrauchskeramik zum Verkauf, und hier finden auch meine Kurse statt. Kommt gerne vorbei!
               </p>
               {atelier.note && (
                 <p style={{ marginTop: "1.25rem", fontSize: "0.9375rem", fontStyle: "italic", color: "var(--primary)" }}>
