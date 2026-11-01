@@ -158,19 +158,28 @@ export default function Courses() {
                 >
                   {course.title}
                 </h2>
-                <p
+                <div
                   style={{
                     fontSize: "0.875rem",
                     color: "var(--muted-foreground)",
-                    lineHeight: 1.8,
-                    whiteSpace: "pre-line",
+                    lineHeight: 1.65,
                     overflowWrap: "anywhere",
-                    marginBottom: "1.75rem",
-                    flex: 1,
+                    marginBottom: "1rem",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "0.65rem",
                   }}
                 >
-                  {course.longDescription || course.description}
-                </p>
+                  {(course.longDescription || course.description || "")
+                    .trim()
+                    .split(/\r?\n[\t ]*\r?\n(?:[\t ]*\r?\n)*/)
+                    .filter(Boolean)
+                    .map((paragraph, index) => (
+                      <p key={index} style={{ margin: 0, whiteSpace: "pre-line" }}>
+                        {paragraph.trim()}
+                      </p>
+                    ))}
+                </div>
 
                 {/* Meta grid */}
                 <div
@@ -179,8 +188,8 @@ export default function Courses() {
                     gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 180px), 1fr))",
                     gap: "0.625rem 1.25rem",
                     borderTop: "1px solid var(--border)",
-                    paddingTop: "1.25rem",
-                    marginBottom: "1.5rem",
+                    paddingTop: "0.875rem",
+                    marginBottom: "1rem",
                     fontSize: "0.8125rem",
                   }}
                 >
