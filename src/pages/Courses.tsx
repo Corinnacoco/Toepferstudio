@@ -156,6 +156,7 @@ export default function Courses() {
                     fontSize: "0.875rem",
                     color: "var(--muted-foreground)",
                     lineHeight: 1.65,
+                    whiteSpace: "pre-line",
                     marginBottom: "1.75rem",
                     flex: 1,
                   }}
