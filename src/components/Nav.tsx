@@ -81,6 +81,20 @@ export default function Nav() {
               </NavLink>
             );
           })}
+          <a
+            href="https://pforte10.de"
+            style={{
+              fontFamily: "DM Sans, sans-serif",
+              fontSize: "0.875rem",
+              fontWeight: 400,
+              letterSpacing: "0.02em",
+              color: "var(--muted-foreground)",
+              transition: "color 0.2s",
+              textTransform: "uppercase",
+            }}
+          >
+            Pforte10
+          </a>
         </nav>
 
         {/* Mobile hamburger */}
@@ -131,6 +145,20 @@ export default function Nav() {
               </NavLink>
             );
           })}
+          <a
+            href="https://pforte10.de"
+            onClick={() => setOpen(false)}
+            style={{
+              display: "block",
+              padding: "0.75rem 0",
+              fontFamily: "Fraunces, Georgia, serif",
+              fontSize: "1.25rem",
+              color: "var(--foreground)",
+              borderBottom: "1px solid var(--border)",
+            }}
+          >
+            Pforte10
+          </a>
         </div>
       )}
 
