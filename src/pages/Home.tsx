@@ -121,7 +121,8 @@ export default function Home() {
 
           <div style={{ display: "flex", flexDirection: "column" }}>
             {featured.map((course) => (
-              <div
+              <Link
+                to={`/kurse#${encodeURIComponent(`kurs-${course.id}`)}`}
                 key={course.id}
                 style={{
                   display: "grid",
@@ -141,15 +142,12 @@ export default function Home() {
                   <p style={{ fontFamily: "Fraunces, Georgia, serif", fontSize: "1.25rem", fontWeight: 600 }}>{course.title}</p>
                   <p style={{ fontSize: "0.875rem", color: "var(--muted-foreground)" }}>{course.duration} · max. {course.maxParticipants} Pers.</p>
                 </div>
-                <a
-                  href={`mailto:hello@julspottery.de?subject=Anmeldung: ${encodeURIComponent(course.title)}`}
-                  style={{ fontSize: "0.7rem", fontWeight: 500, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--accent)", whiteSpace: "nowrap", transition: "color 0.15s" }}
-                  onMouseEnter={e => (e.currentTarget.style.color = "var(--primary)")}
-                  onMouseLeave={e => (e.currentTarget.style.color = "var(--accent)")}
+                <span
+                  style={{ fontSize: "0.7rem", fontWeight: 500, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--primary)", whiteSpace: "nowrap" }}
                 >
-                  Anmelden →
-                </a>
-              </div>
+                  Zum Kurs →
+                </span>
+              </Link>
             ))}
           </div>
         </div>
