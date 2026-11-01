@@ -92,16 +92,14 @@ export default function Courses() {
         </div>
       </section>
 
-      {/* Course grid */}
+      {/* Full-width course list */}
       <section style={{ padding: "3rem 2rem 6rem" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <div
             style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fill, minmax(340px, 1fr))",
-              gap: "1px",
-              backgroundColor: "var(--border)",
-              border: "1px solid var(--border)",
+              display: "flex",
+              flexDirection: "column",
+              gap: "3rem",
             }}
           >
             {filtered.map(course => (
@@ -109,16 +107,15 @@ export default function Courses() {
                 key={course.id}
                 style={{
                   backgroundColor: "var(--background)",
-                  padding: "2rem",
+                  padding: "2rem 0 0",
+                  borderTop: "1px solid var(--border)",
+                  minWidth: 0,
                   display: "flex",
                   flexDirection: "column",
-                  transition: "background-color 0.2s",
                 }}
-                onMouseEnter={e => (e.currentTarget.style.backgroundColor = "var(--card)")}
-                onMouseLeave={e => (e.currentTarget.style.backgroundColor = "var(--background)")}
               >
                 {/* Level tag */}
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "1.25rem" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: "0.75rem", marginBottom: "1.25rem" }}>
                   <span
                     style={{
                       fontSize: "0.7rem",
@@ -142,7 +139,7 @@ export default function Courses() {
                 <h2
                   style={{
                     fontFamily: "Fraunces, Georgia, serif",
-                    fontSize: "1.25rem",
+                    fontSize: "clamp(1.5rem, 3vw, 2rem)",
                     fontWeight: 600,
                     marginBottom: "0.75rem",
                     lineHeight: 1.25,
@@ -155,8 +152,9 @@ export default function Courses() {
                   style={{
                     fontSize: "0.875rem",
                     color: "var(--muted-foreground)",
-                    lineHeight: 1.65,
+                    lineHeight: 1.8,
                     whiteSpace: "pre-line",
+                    overflowWrap: "anywhere",
                     marginBottom: "1.75rem",
                     flex: 1,
                   }}
@@ -168,7 +166,7 @@ export default function Courses() {
                 <div
                   style={{
                     display: "grid",
-                    gridTemplateColumns: "1fr 1fr",
+                    gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 180px), 1fr))",
                     gap: "0.625rem 1.25rem",
                     borderTop: "1px solid var(--border)",
                     paddingTop: "1.25rem",
@@ -197,7 +195,9 @@ export default function Courses() {
                 <a
                   href={`mailto:hello@julspottery.de?subject=Anmeldung: ${encodeURIComponent(course.title)}&body=Hallo,%0A%0Aich möchte mich gerne für den Kurs "${encodeURIComponent(course.title)}" am ${encodeURIComponent(course.date)} anmelden.%0A%0AMein Name: %0A%0AVielen Dank!`}
                   style={{
-                    display: "block",
+                    display: "inline-block",
+                    alignSelf: "flex-start",
+                    maxWidth: "100%",
                     textAlign: "center",
                     padding: "0.75rem 1.5rem",
                     backgroundColor: "var(--primary)",
