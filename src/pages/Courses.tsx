@@ -1,9 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { useCourses, categories } from "../data/courses";
 
 export default function Courses() {
   const [activeCategory, setActiveCategory] = useState("Alle");
   const courses = useCourses() ?? [];
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (!hash || courses.length === 0) return;
+    document.getElementById(decodeURIComponent(hash.slice(1)))?.scrollIntoView({ block: "start" });
+  }, [hash, courses]);
 
   const filtered = activeCategory === "Alle"
     ? courses
@@ -106,7 +113,9 @@ export default function Courses() {
             {filtered.map(course => (
               <article
                 key={course.id}
+                id={`kurs-${course.id}`}
                 style={{
+                  scrollMarginTop: "7rem",
                   backgroundColor: "var(--background)",
                   padding: "2rem 0 0",
                   borderTop: "1px solid var(--border)",
