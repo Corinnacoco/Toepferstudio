@@ -92,7 +92,7 @@ export default function About() {
                 </p>
               )}
             </div>
-            <div style={{ backgroundColor: "#E9F0F5", border: "1px solid #B9CEDC", borderRadius: "2.5rem 1.5rem 3rem 1.25rem", padding: "2.75rem 2.25rem" }}>
+            <div style={{ backgroundColor: "#E9F0F5", border: "1px solid #B9CEDC", borderRadius: "34% 18% 38% 22% / 19% 37% 21% 40%", padding: "3.25rem 2.625rem" }}>
               <h3 style={{ fontFamily: "Fraunces, Georgia, serif", fontSize: "1.125rem", fontWeight: 600, marginBottom: "0.75rem" }}>Adresse</h3>
               <p style={{ fontSize: "0.9375rem", lineHeight: 1.75, color: "var(--muted-foreground)", marginBottom: "1.75rem" }}>{atelier.address}</p>
               <h3 style={{ fontFamily: "Fraunces, Georgia, serif", fontSize: "1.125rem", fontWeight: 600, marginBottom: "0.75rem" }}>Öffnungszeiten</h3>
@@ -114,12 +114,12 @@ export default function About() {
           </h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "1.5rem" }}>
             {[
-              { title: "Handwerk", body: "Fundierte Ausbildung an der Berufsfachschule für Keramik in Landshut: vom Drehen an der Scheibe über Formenbau und Gipsformen bis zu Dekortechniken.", radius: "3rem 1.25rem 2.5rem 1.5rem" },
-              { title: "Gebrauchskeramik", body: "Ich mache Keramik für den Alltag: Tassen, Teller und Schüsseln, die benutzt werden wollen, schön und praktisch zugleich.", radius: "1.5rem 3rem 1.25rem 2.75rem" },
-              { title: "Kurse", body: "Mein Wissen teile ich gerne weiter. In meinen Töpferkursen könnt ihr das Handwerk selbst erleben und eure eigenen Stücke gestalten.", radius: "2.75rem 1.5rem 3rem 1.25rem" },
-              { title: "Atelier in Landau", body: "In unserem Gemeinschaftsatelier in Landau entstehen meine Keramikstücke und finden Töpferkurse statt. Kommt vorbei um meine Arbeiten zu entdecken und selbst kreativ zu werden.", radius: "1.25rem 2.5rem 1.5rem 3rem" },
+              { title: "Handwerk", body: "Fundierte Ausbildung an der Berufsfachschule für Keramik in Landshut: vom Drehen an der Scheibe über Formenbau und Gipsformen bis zu Dekortechniken.", radius: "34% 18% 38% 22% / 19% 37% 21% 40%" },
+              { title: "Gebrauchskeramik", body: "Ich mache Keramik für den Alltag: Tassen, Teller und Schüsseln, die benutzt werden wollen, schön und praktisch zugleich.", radius: "19% 39% 21% 35% / 36% 23% 41% 18%" },
+              { title: "Kurse", body: "Mein Wissen teile ich gerne weiter. In meinen Töpferkursen könnt ihr das Handwerk selbst erleben und eure eigenen Stücke gestalten.", radius: "42% 21% 33% 17% / 24% 39% 18% 36%" },
+              { title: "Atelier in Landau", body: "In unserem Gemeinschaftsatelier in Landau entstehen meine Keramikstücke und finden Töpferkurse statt. Kommt vorbei um meine Arbeiten zu entdecken und selbst kreativ zu werden.", radius: "21% 35% 18% 42% / 38% 18% 36% 23%" },
             ].map(({ title, body, radius }) => (
-              <div key={title} style={{ backgroundColor: "var(--background)", border: "1px solid var(--border)", borderRadius: radius, padding: "2.75rem 2.25rem" }}>
+              <div key={title} style={{ backgroundColor: "var(--background)", border: "1px solid var(--border)", borderRadius: radius, padding: "3.25rem 2.625rem" }}>
                 <h3 style={{ fontFamily: "Fraunces, Georgia, serif", fontSize: "1.25rem", fontWeight: 600, marginBottom: "0.875rem" }}>{title}</h3>
                 <p style={{ fontSize: "0.9375rem", lineHeight: 1.75, color: "var(--muted-foreground)" }}>{body}</p>
               </div>
