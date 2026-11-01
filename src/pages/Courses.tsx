@@ -96,6 +96,7 @@ export default function Courses() {
       <section style={{ padding: "3rem 2rem 6rem" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <div
+            className="w-full md:w-3/4"
             style={{
               display: "flex",
               flexDirection: "column",
